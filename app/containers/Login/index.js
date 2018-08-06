@@ -21,13 +21,7 @@ const Article = styled.article`
 
 export class LoginPage extends React.PureComponent {
   componentDidMount() {}
-  ScreenWidth() {
-    // console.log(document.documentElement.clientWidth);
-    // console.log(document.documentElement.clientHeight);
-  }
-
   render() {
-    this.ScreenWidth();
     return (
       <Article>
         <Helmet>
@@ -37,7 +31,7 @@ export class LoginPage extends React.PureComponent {
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <P>智能广告投放系统 V1.0</P>
+        <P>智能广告投放系统111 V1.0</P>
         <Form />
         <Img src={BgImag} alt="react-boilerplate - Logo" />
       </Article>
