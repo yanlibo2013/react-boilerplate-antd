@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 // import Img from 'components/Login/Img';
 import P from 'components/Login/P';
+import { upperCase } from 'lodash';
 // import Form from 'components/Login/Form';
 
 // import BgImag from 'images/login/login_bg.jpg';
@@ -31,7 +32,8 @@ export class LoginPage extends React.PureComponent {
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <P>智能广告投放系统111 V1.0</P>
+        <P>{upperCase('react')}</P>
+        {/* <Form /> */}
         {/* <Form />
         <Img src={BgImag} alt="react-boilerplate - Logo" /> */}
       </Article>

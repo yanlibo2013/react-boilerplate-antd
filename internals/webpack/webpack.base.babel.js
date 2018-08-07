@@ -4,6 +4,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 // Remove this line once the following warning goes away (it was meant for webpack loader authors not users):
 // 'DeprecationWarning: loaderUtils.parseQuery() received a non-string value which can be problematic,
@@ -30,7 +31,11 @@ module.exports = options => ({
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: options.babelQuery,
+          // options: options.babelQuery,
+          options: {
+            plugins: ['lodash'],
+            presets: [['env', { modules: false, targets: { node: 4 } }]],
+          },
         },
       },
       {
@@ -127,6 +132,7 @@ module.exports = options => ({
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
+    new LodashModuleReplacementPlugin(),
   ]),
   resolve: {
     modules: ['node_modules', 'app'],
