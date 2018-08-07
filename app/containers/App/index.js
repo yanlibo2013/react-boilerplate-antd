@@ -15,7 +15,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import LoginPage from 'containers/Login/Loadable';
 
 const AppWrapper = styled.div`
-  display: flex;
+  /* display: flex; */
   min-height: 100%;
 `;
 
