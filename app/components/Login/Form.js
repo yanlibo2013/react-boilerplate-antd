@@ -9,6 +9,13 @@ class NormalLoginForm extends React.Component {
     e.preventDefault();
   };
 
+  /**
+   *
+   *
+   * @returns
+   *
+   * @memberOf NormalLoginForm
+   */
   render() {
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
@@ -18,6 +25,7 @@ class NormalLoginForm extends React.Component {
             placeholder="Username"
           />
         </FormItem>
+
         <FormItem>
           <Input
             prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -31,7 +39,7 @@ class NormalLoginForm extends React.Component {
             htmlType="submit"
             className="login-form-button"
           >
-            Login In
+            登录
           </Button>
         </FormItem>
       </Form>
