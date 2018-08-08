@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 // import Img from 'components/Login/Img';
 import P from 'components/Login/P';
 import { upperCase } from 'lodash';
@@ -14,17 +13,13 @@ import { upperCase } from 'lodash';
 // import BgImag from 'images/login/login_bg.jpg';
 
 import { compose } from 'redux';
-
-const Article = styled.article`
-  display: flex;
-  justify-content: center;
-`;
+import './index.scss';
 
 export class LoginPage extends React.PureComponent {
   componentDidMount() {}
   render() {
     return (
-      <Article>
+      <div className="login">
         <Helmet>
           <title>Login Page</title>
           <meta
@@ -36,7 +31,7 @@ export class LoginPage extends React.PureComponent {
         {/* <Form /> */}
         {/* <Form />
         <Img src={BgImag} alt="react-boilerplate - Logo" /> */}
-      </Article>
+      </div>
     );
   }
 }
