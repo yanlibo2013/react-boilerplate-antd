@@ -11,11 +11,12 @@ import { compose } from 'redux';
 import './index.scss';
 
 import Header from '../../components/Header/index';
+import Sider from '../../components/Sider/index';
 
 export class HomePage extends React.PureComponent {
   componentDidMount() {}
   render() {
-    const { Content, Sider } = Layout;
+    const { Content } = Layout;
     return (
       <div className="home">
         <Helmet>

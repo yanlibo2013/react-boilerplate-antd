@@ -6,7 +6,11 @@ const { Header } = Layout;
 /* eslint-disable react/prefer-stateless-function */
 class Component extends React.Component {
   render() {
-    return <Header className="header" />;
+    return (
+      <Header className="header">
+        <img src="../../images/header/logo.png" alt="" />
+      </Header>
+    );
   }
 }
 
