@@ -1,16 +1,6 @@
 .home {
   height: 100%;
 
-  .header {
-    background: #ffffff;
-    height: 72px;
-    span {
-      font-size: 18px !important;
-      font-family: MicrosoftYaHei;
-      font-weight: bold;
-    }
-  }
-
   .layout {
     height: 100%;
   }
@@ -24,7 +14,7 @@
   }
 
   .content {
-    background: rgb(16, 142, 233);
+    background: #fbfbfb;
   }
 
   .footer {

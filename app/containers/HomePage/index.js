@@ -10,12 +10,12 @@ import { Layout } from 'antd';
 import { compose } from 'redux';
 import './index.scss';
 
-// import SiderBar from '../../components/antd/index';
+import Header from '../../components/Header/index';
 
 export class HomePage extends React.PureComponent {
   componentDidMount() {}
   render() {
-    const { Header, Footer, Content, Sider } = Layout;
+    const { Content, Sider } = Layout;
     return (
       <div className="home">
         <Helmet>
@@ -26,23 +26,13 @@ export class HomePage extends React.PureComponent {
           />
         </Helmet>
         <Layout className="layout">
-          <Sider
-            className="sider"
-            // style={
-            //   ({ width: '14rem' },
-            //   { flex: '0 0 14rem' },
-            //   { 'max-width': '14rem' },
-            //   { 'min-width': '14rem' })
-            // }
-          >
-            Sider
-          </Sider>
+          <Sider className="sider">Sider</Sider>
           <Layout>
             <Header className="header">
               <span>权限管理</span>
             </Header>
             <Content className="content">Content</Content>
-            <Footer className="footer">Footer</Footer>
+            {/* <Footer className="footer">Footer</Footer> */}
           </Layout>
         </Layout>
       </div>
