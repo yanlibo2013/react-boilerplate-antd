@@ -13,6 +13,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import LoginPage from 'containers/Login/Loadable';
+import HomePage from 'containers/HomePage/Loadable';
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -30,6 +31,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={LoginPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/home" component={HomePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
     </AppWrapper>
