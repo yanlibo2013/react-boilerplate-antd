@@ -9,6 +9,10 @@ injectGlobal`
     /* background:#281C0B */
   }
 
+  body{
+    overflow-y: auto;
+  }
+
 
 
 

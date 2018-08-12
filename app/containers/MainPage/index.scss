@@ -5,8 +5,13 @@
   .layout {
     height: 100%;
     background: red;
+    // overflow-y: scroll;
+   
     .content{
       background: rgb(114, 78, 78);
+      // overflow-y: hidden;
+      // overflow-y: scroll;
+      // overflow: auto;
     }
   }
 
