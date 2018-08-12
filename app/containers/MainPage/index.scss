@@ -1,9 +1,13 @@
 .main {
   height: 100%;
+  
 
   .layout {
     height: 100%;
     background: red;
+    .content{
+      background: rgb(114, 78, 78);
+    }
   }
 
 }

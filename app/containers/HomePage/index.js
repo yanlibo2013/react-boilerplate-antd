@@ -17,13 +17,13 @@ export class HomePage extends React.PureComponent {
     return (
       <div className="home">
         <Helmet>
-          <title>home11111111111111111 Page</title>
+          <title>home Page</title>
           <meta
             name="description"
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <Content className="content">Home</Content>
+        <Content className="content">home</Content>
       </div>
     );
   }

@@ -27,7 +27,7 @@ export class Page extends React.PureComponent {
         </Helmet>
         <Layout className="layout">
           <Sider />
-          <Layout>
+          <Layout className="content">
             <Header />
             <Switch>
               <Route exact path="/main" component={HomePage} />

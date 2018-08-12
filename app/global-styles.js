@@ -9,10 +9,7 @@ injectGlobal`
     /* background:#281C0B */
   }
 
-  body {
-    /* font-family: 'MicrosoftYaHei'; */
-   
-  }
+
 
 
   #app {
