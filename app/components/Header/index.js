@@ -8,7 +8,8 @@ class Component extends React.Component {
   render() {
     return (
       <Header className="header">
-        <img src="../../images/header/logo.png" alt="" />
+        {/* <img src="../../images/header/logo.png" alt="" /> */}
+        科达技术
       </Header>
     );
   }

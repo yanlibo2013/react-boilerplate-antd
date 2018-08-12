@@ -10,25 +10,25 @@ import { Layout } from 'antd';
 import { compose } from 'redux';
 import './index.scss';
 
-export class HomePage extends React.PureComponent {
+export class Page extends React.PureComponent {
   componentDidMount() {}
   render() {
     const { Content } = Layout;
     return (
       <div className="home">
         <Helmet>
-          <title>home11111111111111111 Page</title>
+          <title>about Page</title>
           <meta
             name="description"
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <Content className="content">Home</Content>
+        <Content className="content">abou</Content>
       </div>
     );
   }
 }
 
-HomePage.propTypes = {};
+Page.propTypes = {};
 
-export default compose()(HomePage);
+export default compose()(Page);
