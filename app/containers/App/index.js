@@ -13,6 +13,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import LoginPage from 'containers/Login/Loadable';
+import LayoutPage from 'containers/Layout/Loadable';
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -28,8 +29,9 @@ export default function App() {
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Switch>
-        <Route exact path="/" component={LoginPage} />
+        <Route exact path="/" component={LayoutPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/layout" component={LayoutPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
     </AppWrapper>

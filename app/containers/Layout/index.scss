@@ -1,0 +1,37 @@
+.layout {
+  background-color: rgb(221, 213, 213);
+  display: flex;
+  height: 100%;
+
+  //   background-size: cover;
+  .left {
+    width: 220px;
+    height: 100%;
+    background: #2f323a;
+  }
+
+  .right {
+    flex: 1;
+    background: rgb(0, 217, 255);
+    display: flex;
+    flex-direction: column;
+
+    .top {
+      height: 72px;
+      width: 100%;
+      background: #ffffff;
+    }
+
+    .content {
+      flex: 1;
+      background: #f8f4f4;
+      // box-sizing:border-box;
+      padding: 30px;
+
+      .page {
+        background: #7689be;
+        height: 100%;
+      }
+    }
+  }
+}
