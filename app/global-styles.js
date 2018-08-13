@@ -10,7 +10,7 @@ injectGlobal`
   }
 
   body{
-    overflow-y: auto;
+    /* overflow-y: scroll; */
   }
 
 
