@@ -9,10 +9,11 @@ injectGlobal`
     /* background:#281C0B */
   }
 
-  body {
-    /* font-family: 'MicrosoftYaHei'; */
-   
+  body{
+    /* overflow-y: scroll; */
   }
+
+
 
 
   #app {

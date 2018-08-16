@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Layout } from 'antd';
 
 import { compose } from 'redux';
 import './index.scss';
@@ -12,31 +13,22 @@ import './index.scss';
 export class Page extends React.PureComponent {
   componentDidMount() {}
   render() {
+    const { Content } = Layout;
     return (
-      <div className="layout">
+      <div className="home">
         <Helmet>
-          <title>Layout Page</title>
+          <title>about Page</title>
           <meta
             name="description"
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <div className="left" />
-        <div className="right">
-          <div className="top" />
-          <div className="content">
-            <div className="page" />
-            {/* <div className="page" />
-            <div className="page" />
-            <div className="page" />
-            <div className="page" />
-            <div className="page" /> */}
-          </div>
-        </div>
+        <Content className="content">abou</Content>
       </div>
     );
   }
 }
+
 Page.propTypes = {};
 
 export default compose()(Page);
