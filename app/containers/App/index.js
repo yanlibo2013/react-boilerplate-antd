@@ -14,6 +14,7 @@ import { Switch, Route } from 'react-router-dom';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import LoginPage from 'containers/Login/Loadable';
 import LayoutPage from 'containers/Layout/Loadable';
+import Flex from 'containers/Flex/Loadable';
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -29,9 +30,10 @@ export default function App() {
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Switch>
-        <Route exact path="/" component={LayoutPage} />
+        <Route exact path="/" component={Flex} />
         <Route path="/login" component={LoginPage} />
         <Route path="/layout" component={LayoutPage} />
+        <Route path="/flex" component={Flex} />
         <Route path="" component={NotFoundPage} />
       </Switch>
     </AppWrapper>
