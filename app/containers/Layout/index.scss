@@ -1,41 +1,62 @@
-.layout {
-  background-color: rgb(221, 213, 213);
-  display: flex;
+.flex {
   height: 100%;
-
-  //   background-size: cover;
-  .left {
-    width: 220px;
-    height: 100%;
-    background: #2f323a;
-  }
-
-  .right {
-    flex: 1;
-    background: rgb(0, 217, 255);
+  .wrapper {
     display: flex;
-    flex-direction: column;
-    
-    // height: 10000px;
-
-    .top {
+    flex-direction: column; //row  按照行显示  wrap 换行显示
+    font-weight: bold;
+    text-align: center;
+    height: 100%;
+    background: rgb(175, 169, 169);
+    // overflow-y: scroll;
+    .header {
+      background: rgb(145, 85, 75);
       height: 72px;
-      width: 100%;
-      background: #2c0606;
     }
 
-    .content {
+    .container {
+      background: rgb(24, 192, 94);
+      // flex: 1 auto;
+      display: flex;
+      // align-items:stretch;
+      // min-height: calc(100vh - 5rem);
       // overflow-y: scroll;
-      flex: 1;
-      background: #f8f4f4;
-      // box-sizing:border-box;
-      padding: 30px 30px 0 30px;
-
-      .page {
-        background: #7689be;
-        height: 500px;
-        // height: 10000px
+      height: 100%;
+    
+      .aside{
+        width: 220px;
+        background: #2F323A;
+       
+        // height: calc(100vh - 5rem)!important;
       }
+
+      .content{
+        flex: 1;
+        background: #FBFBFB;
+        // height: calc(100vh - 5rem);
+        width: calc(100vw - 220px);
+        height: 100%;
+       
+
+        .page{
+          margin: 30px 30px 0 30px;
+          background: rgb(21, 47, 117);
+          // height: calc(100vh - 5rem);
+
+          .box{
+            height: 300px;
+            background: rgb(0, 255, 136);
+            // margin: 10px 0 0 0
+          }
+
+          
+        }
+      }
+
     }
+
+    
   }
 }
+
+// 参考
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
