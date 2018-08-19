@@ -23,7 +23,10 @@ export class Page extends React.PureComponent {
       document.documentElement.scrollHeight,
     );
   }
-  componentDidMount() {}
+  componentDidMount() {
+    // console.log(window.innerHeight);
+    // console.log(this.getScrollHeight());
+  }
   render() {
     return (
       <div className="main">
@@ -44,17 +47,6 @@ export class Page extends React.PureComponent {
             </div>
           </div>
         </div>
-        {/* <Layout className="layout">
-          <Sider />
-          <Layout className="content">
-            <Header />
-            <Switch>
-              <Route exact path="/main" component={HomePage} />
-              <Route path="/main/home" component={HomePage} />
-              <Route path="/main/about" component={AboutPage} />
-            </Switch>
-          </Layout>
-        </Layout> */}
       </div>
     );
   }

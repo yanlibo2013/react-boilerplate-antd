@@ -18,6 +18,8 @@ import MainPage from 'containers/MainPage/Loadable';
 import LayoutPage from 'containers/Layout/Loadable';
 import Flex from 'containers/Flex/Loadable';
 
+// import { makeSelectIsShowScroll } from './selectors';
+
 const AppWrapper = styled.div`
   height: 100%;
 `;
