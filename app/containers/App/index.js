@@ -13,7 +13,6 @@ import { createStructuredSelector } from 'reselect';
 
 import { compose } from 'redux';
 import { Helmet } from 'react-helmet';
-// import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -23,13 +22,8 @@ import MainPage from 'containers/MainPage/Loadable';
 import LayoutPage from 'containers/Layout/Loadable';
 import Flex from 'containers/Flex/Loadable';
 
+import Spinner from 'components/LoadingIndicator/index';
 import { makeSelectIsShowScroll } from './selectors';
-
-// import { isShowScrollBar } from '../App/actions';
-
-// const AppWrapper = styled.div`
-//   /* height: 100%; */
-// `;
 
 export class Page extends React.PureComponent {
   componentDidMount() {}
@@ -55,6 +49,7 @@ export class Page extends React.PureComponent {
           <Route path="/main" component={MainPage} />
           <Route path="/layout" component={LayoutPage} />
           <Route path="/flex" component={Flex} />
+          <Route path="/spinner" component={Spinner} />
           <Route path="" component={NotFoundPage} />
         </Switch>
       </div>
@@ -63,17 +58,8 @@ export class Page extends React.PureComponent {
 }
 
 Page.propTypes = {
-  // isShowScrollBar: PropTypes.func,
   isShowScroll: PropTypes.bool,
 };
-
-// export function mapDispatchToProps(dispatch) {
-//   return {
-//     isShowScrollBar: val => {
-//       dispatch(isShowScrollBar(val));
-//     },
-//   };
-// }
 
 const mapStateToProps = createStructuredSelector({
   isShowScroll: makeSelectIsShowScroll(),
@@ -85,27 +71,3 @@ const withConnect = connect(
 );
 
 export default compose(withConnect)(Page);
-
-// export default function App() {
-//   const style = {
-//     height: makeSelectIsShowScroll() ? 'auto' : '100%',
-//   };
-//   return (
-//     <AppWrapper style={style}>
-//       <Helmet
-//         titleTemplate="%s - React.js Boilerplate"
-//         defaultTitle="React.js Boilerplate"
-//       >
-//         <meta name="description" content="A React.js Boilerplate application" />
-//       </Helmet>
-//       <Switch>
-//         <Route exact path="/" component={Flex} />
-//         <Route path="/login" component={LoginPage} />
-//         <Route path="/main" component={MainPage} />
-//         <Route path="/layout" component={LayoutPage} />
-//         <Route path="/flex" component={Flex} />
-//         <Route path="" component={NotFoundPage} />
-//       </Switch>
-//     </AppWrapper>
-//   );
-// }
