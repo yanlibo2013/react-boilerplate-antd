@@ -17,15 +17,11 @@ export class Page extends React.PureComponent {
     super();
     this.Wrapper = React.createRef();
   }
-  getScrollHeight() {
-    return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-    );
-  }
+
   componentDidMount() {
     // console.log(window.innerHeight);
     // console.log(this.getScrollHeight());
+    //  console.log(this.Wrapper);
   }
   render() {
     return (

@@ -4,13 +4,25 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 
 import { compose } from 'redux';
 import './index.scss';
+import { isShowScrollBar } from '../App/actions';
 
 export class Page extends React.PureComponent {
-  componentDidMount() {}
+  getScrollHeight() {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+    );
+  }
+  componentDidMount() {
+    const data = window.innerHeight !== this.getScrollHeight();
+    this.props.isShowScrollBar(data);
+  }
   render() {
     return (
       <div className="about">
@@ -23,12 +35,41 @@ export class Page extends React.PureComponent {
         </Helmet>
         <div className="page">
           <span>about</span>
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
         </div>
       </div>
     );
   }
 }
 
-Page.propTypes = {};
+Page.propTypes = {
+  isShowScrollBar: PropTypes.func,
+};
 
-export default compose()(Page);
+export function mapDispatchToProps(dispatch) {
+  return {
+    isShowScrollBar: val => {
+      dispatch(isShowScrollBar(val));
+    },
+  };
+}
+
+// const mapStateToProps = createStructuredSelector({
+//   repos: makeSelectRepos(),
+//   username: makeSelectUsername(),
+//   loading: makeSelectLoading(),
+//   error: makeSelectError(),
+// });
+
+const withConnect = connect(
+  null,
+  mapDispatchToProps,
+);
+
+export default compose(withConnect)(Page);
