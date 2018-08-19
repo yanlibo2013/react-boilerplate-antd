@@ -21,7 +21,9 @@ export class HomePage extends React.PureComponent {
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <span>科达</span>
+        <div className="page">
+          <span>科达</span>
+        </div>
       </div>
     );
   }

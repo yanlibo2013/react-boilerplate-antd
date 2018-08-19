@@ -42,12 +42,12 @@ export class Page extends React.PureComponent {
             <div className="aside">aside</div>
             <div className="content">
               <div className="page">
+                {/* <div className="box" />
                 <div className="box" />
                 <div className="box" />
                 <div className="box" />
                 <div className="box" />
-                <div className="box" />
-                <div className="box" />
+                <div className="box" /> */}
               </div>
             </div>
           </div>

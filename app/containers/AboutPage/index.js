@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Layout } from 'antd';
 
 import { compose } from 'redux';
 import './index.scss';
@@ -13,9 +12,8 @@ import './index.scss';
 export class Page extends React.PureComponent {
   componentDidMount() {}
   render() {
-    const { Content } = Layout;
     return (
-      <div className="home">
+      <div className="about">
         <Helmet>
           <title>about Page</title>
           <meta
@@ -23,7 +21,9 @@ export class Page extends React.PureComponent {
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <Content className="content">abou</Content>
+        <div className="page">
+          <span>about</span>
+        </div>
       </div>
     );
   }
