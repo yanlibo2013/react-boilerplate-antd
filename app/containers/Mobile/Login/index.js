@@ -4,10 +4,9 @@
  */
 
 import React from 'react';
+import { Button } from 'antd-mobile';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-
-import { Button } from 'antd-mobile';
 
 import { compose } from 'redux';
 import './index.scss';
@@ -26,9 +25,7 @@ export class Page extends React.PureComponent {
         </Helmet>
         <div className="page">
           {/* <span>login mobile</span> */}
-          <Button type="primary" className="btn">
-            primary
-          </Button>
+          <Button type="primary">primary</Button>
         </div>
       </div>
     );
