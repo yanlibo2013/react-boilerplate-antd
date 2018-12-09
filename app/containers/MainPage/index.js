@@ -31,7 +31,7 @@ export class Page extends React.PureComponent {
           <meta name="description" content="main page423423" />
         </Helmet>
         <div className="wrapper" ref={this.Wrapper}>
-          <div className="header">Header</div>
+          <div className="header">Header1</div>
           <div className="container">
             <div className="aside">aside</div>
             <div className="content">
