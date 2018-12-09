@@ -22,6 +22,8 @@ import MainPage from 'containers/MainPage/Loadable';
 import LayoutPage from 'containers/Layout/Loadable';
 import Flex from 'containers/Flex/Loadable';
 
+import LoginMobile from 'containers/Mobile/Login/index';
+
 import Spinner from 'components/LoadingIndicator/index';
 import { makeSelectIsShowScroll } from './selectors';
 
@@ -50,6 +52,7 @@ export class Page extends React.PureComponent {
           <Route path="/layout" component={LayoutPage} />
           <Route path="/flex" component={Flex} />
           <Route path="/spinner" component={Spinner} />
+          <Route path="/loginmobile" component={LoginMobile} />
           <Route path="" component={NotFoundPage} />
         </Switch>
       </div>
