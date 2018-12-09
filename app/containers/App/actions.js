@@ -15,7 +15,12 @@
  *    }
  */
 
-import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from './constants';
+import {
+  LOAD_REPOS,
+  LOAD_REPOS_SUCCESS,
+  LOAD_REPOS_ERROR,
+  IS_SHOW_SCROLL,
+} from './constants';
 
 /**
  * Load the repositories, this action starts the request saga
@@ -55,5 +60,19 @@ export function repoLoadingError(error) {
   return {
     type: LOAD_REPOS_ERROR,
     error,
+  };
+}
+
+/**
+ * Dispatched when Content beyond the visible area
+ *
+ * @param  {object} error The error
+ *
+ * @return {object}       An action object with a type of LOAD_REPOS_ERROR passing the error
+ */
+export function isShowScrollBar(data) {
+  return {
+    type: IS_SHOW_SCROLL,
+    data,
   };
 }

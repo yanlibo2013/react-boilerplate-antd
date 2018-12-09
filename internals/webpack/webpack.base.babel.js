@@ -5,6 +5,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
+const postcssPxToViewport = require('postcss-px-to-viewport');
+const postcssWriteSvg = require('postcss-write-svg');
+const postcssViewportUnits = require('postcss-viewport-units');
+const cssnano = require('cssnano');
+const postcssFixes = require('postcss-flexbugs-fixes');
 
 // Remove this line once the following warning goes away (it was meant for webpack loader authors not users):
 // 'DeprecationWarning: loaderUtils.parseQuery() received a non-string value which can be problematic,
@@ -39,18 +46,60 @@ module.exports = options => ({
         },
       },
       {
-        // Preprocess our own .css files
-        // This is the place to add your own loaders (e.g. sass/less etc.)
-        // for a list of loaders, see https://webpack.js.org/loaders/#styling
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        // Preprocess 3rd party .css files located in node_modules
-        test: /\.css$/,
-        include: /node_modules/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.s?css$/,
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              // Necessary for external CSS imports to work
+              // https://github.com/facebookincubator/create-react-app/issues/2677
+              ident: 'postcss',
+              plugins: () => [
+                postcssFixes,
+                autoprefixer({
+                  browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9', // React doesn't support IE8 anyway
+                  ],
+                  flexbox: 'no-2009',
+                }),
+                postcssAspectRatioMini({}), // 用来处理元素容器宽高比
+                postcssWriteSvg({
+                  // 用来处理移动端1px的解决方案
+                  utf8: false,
+                }),
+                postcssPxToViewport({
+                  viewportWidth: 750, // 视窗的宽度，对应我们设计稿的宽度，一般是750
+                  viewportHeight: 667, // 视窗的高度，根据750设备的宽度来指定，一般指定1334，也可以不配置
+                  unitPrecision: 3, // 指定'px'转换为视窗单位值得小数位数（很多时候无法整除）
+                  viewportUnit: 'vw', // 指定需要转换成的视窗单位,建议使用vw
+                  selectorBlackList: ['.ignore', '.hairlines'], // 指定不转换为视窗单位的类，可以自定义，可以无限添加,建议定义一至两个通用的类名
+                  minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值。
+                  mediaQuery: false, // 允许在媒体查询中转换`px`
+                }),
+                postcssViewportUnits({}), // 给CSS的属性添加content的属性 配合viewport-units-buggyfill解决个别手机不支持vw
+                cssnano({
+                  // 压缩和清理CSS代码
+                  preset: 'advanced',
+                  autoprefixer: false,
+                  'postcss-zindex': false,
+                }),
+              ],
+            },
+          },
+          {
+            loader: require.resolve('sass-loader'),
+          },
+        ],
       },
       {
         test: /\.(eot|otf|ttf|woff|woff2)$/,

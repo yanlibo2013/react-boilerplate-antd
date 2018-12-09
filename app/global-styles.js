@@ -4,21 +4,24 @@ import { injectGlobal } from 'styled-components';
 injectGlobal`
   html,
   body {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    /* width: 100%; */
+    /* background:#281C0B */
   }
 
-  body {
-    /* font-family: 'MicrosoftYaHei'; */
-   
+  body{
+    /* overflow-y: scroll; */
   }
+
+
 
 
   #app {
     /* 充满body */
-    background-color: #FBFBFB;
-    min-height: 100%;
-    min-width: 100%;
+    /* background-color: red; */
+    /* min-height: 100%;
+    min-width: 100%; */
+    height:100%
     
   }
 
