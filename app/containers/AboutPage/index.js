@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Plan from 'components/List';
 
 import { compose } from 'redux';
 import './index.scss';
@@ -25,6 +26,7 @@ export class Page extends React.PureComponent {
           />
         </Helmet>
         <Header />
+        <Plan />
         <Footer />
       </div>
     );
