@@ -25,7 +25,9 @@ export class Page extends React.PureComponent {
         </Helmet>
         <div className="page">
           {/* <span>login mobile</span> */}
-          <Button type="primary">primary</Button>
+          <Button type="primary" className="btn">
+            primary
+          </Button>
         </div>
       </div>
     );

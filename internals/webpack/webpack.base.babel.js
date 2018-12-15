@@ -9,7 +9,7 @@ const autoprefixer = require('autoprefixer');
 const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
 const postcssPxToViewport = require('postcss-px-to-viewport');
 const postcssWriteSvg = require('postcss-write-svg');
-const postcssViewportUnits = require('postcss-viewport-units');
+// const postcssViewportUnits = require('postcss-viewport-units');
 const cssnano = require('cssnano');
 const postcssFixes = require('postcss-flexbugs-fixes');
 
@@ -86,7 +86,6 @@ module.exports = options => ({
                   minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值。
                   mediaQuery: false, // 允许在媒体查询中转换`px`
                 }),
-                postcssViewportUnits({}), // 给CSS的属性添加content的属性 配合viewport-units-buggyfill解决个别手机不支持vw
                 cssnano({
                   // 压缩和清理CSS代码
                   preset: 'advanced',
