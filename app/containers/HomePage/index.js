@@ -4,25 +4,21 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
+import { Grid } from 'antd-mobile';
 
 import { compose } from 'redux';
 import './index.scss';
-import { isShowScrollBar } from '../App/actions';
 export class HomePage extends React.PureComponent {
-  getScrollHeight() {
-    return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-    );
-  }
-  componentDidMount() {
-    const data = window.innerHeight !== this.getScrollHeight();
-    this.props.isShowScrollBar(data);
-  }
+  componentDidMount() {}
   render() {
+    const data = Array.from(new Array(9)).map((_val, i) => ({
+      icon:
+        'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
+      text: `name${i}`,
+      id: i,
+    }));
     return (
       <div className="home">
         <Helmet>
@@ -33,23 +29,22 @@ export class HomePage extends React.PureComponent {
           />
         </Helmet>
         <div className="page">
-          <span>科达</span>
+          <Grid
+            data={data}
+            columnNum={3}
+            itemStyle={{ height: '150px', background: 'rgba(0,0,0,.05)' }}
+            onClick={() => {}}
+          />
         </div>
       </div>
     );
   }
 }
 
-HomePage.propTypes = {
-  isShowScrollBar: PropTypes.func,
-};
+HomePage.propTypes = {};
 
-export function mapDispatchToProps(dispatch) {
-  return {
-    isShowScrollBar: val => {
-      dispatch(isShowScrollBar(val));
-    },
-  };
+export function mapDispatchToProps() {
+  return {};
 }
 
 // const mapStateToProps = createStructuredSelector({

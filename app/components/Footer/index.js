@@ -1,30 +1,24 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+// import PropTypes from 'prop-types';
+import { Button } from 'antd-mobile';
+import './index.scss';
 
-import A from 'components/A';
-import LocaleToggle from 'containers/LocaleToggle';
-import Wrapper from './Wrapper';
-import messages from './messages';
-
-function Footer() {
-  return (
-    <Wrapper>
-      <section>
-        <FormattedMessage {...messages.licenseMessage} />
-      </section>
-      <section>
-        <LocaleToggle />
-      </section>
-      <section>
-        <FormattedMessage
-          {...messages.authorMessage}
-          values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
-          }}
-        />
-      </section>
-    </Wrapper>
-  );
+export class Footer extends React.Component {
+  componentDidMount() {}
+  showModal() {}
+  render() {
+    return (
+      <div className="footer">
+        <Button type="primary" size="small" className="btn">
+          立即投保
+        </Button>
+      </div>
+    );
+  }
 }
+
+Footer.propTypes = {
+  // modal: PropTypes.Bool
+};
 
 export default Footer;
