@@ -22,7 +22,7 @@ export class HomePage extends React.PureComponent {
     const data = Array.from(new Array(9)).map((_val, i) => ({
       icon:
         'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-      text: `flex12121${i}`,
+      text: `Grid${i}`,
       id: i,
     }));
     return (
