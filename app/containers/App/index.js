@@ -33,6 +33,7 @@ export class Page extends React.PureComponent {
         </Helmet>
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/" component={HomePage} />
           <Route path="/about/:id" component={AboutPage} />
         </Switch>
       </div>

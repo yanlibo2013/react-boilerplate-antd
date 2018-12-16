@@ -22,13 +22,13 @@ export class HomePage extends React.PureComponent {
     const data = Array.from(new Array(9)).map((_val, i) => ({
       icon:
         'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-      text: `name${i}`,
+      text: `name432${i}`,
       id: i,
     }));
     return (
       <div className="home">
         <Helmet>
-          <title>home Page</title>
+          <title>home </title>
           <meta
             name="description"
             content="A React.js Boilerplate application homepage"
