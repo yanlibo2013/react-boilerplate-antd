@@ -16,13 +16,13 @@ export class HomePage extends React.PureComponent {
   clickItem(val) {
     const { id } = val.id;
     const path = `/repos/${id}`;
-    this.context.router.push(path);
+    this.router.push(path);
   }
   render() {
     const data = Array.from(new Array(9)).map((_val, i) => ({
       icon:
         'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-      text: `name432${i}`,
+      text: `flex${i}`,
       id: i,
     }));
     return (
