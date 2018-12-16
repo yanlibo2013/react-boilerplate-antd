@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal } from 'antd-mobile';
+import { Button, Modal, List, InputItem } from 'antd-mobile';
 
 export class Footer extends React.PureComponent {
   constructor(props) {
@@ -20,6 +20,7 @@ export class Footer extends React.PureComponent {
       modal2: key,
     });
   }
+
   render() {
     return (
       <div className="footer">
@@ -37,7 +38,14 @@ export class Footer extends React.PureComponent {
           animationType="slide-up"
           onClose={() => this.onClose(false)}
         >
-          <div style={{ height: 400, overflow: 'scroll' }} />
+          <div style={{ height: 400, overflow: 'scroll' }}>
+            <List renderHeader={() => 'Form Validation'}>
+              <InputItem placeholder="please input account">KDG</InputItem>
+              <InputItem placeholder="please input password" type="password">
+                Password
+              </InputItem>
+            </List>
+          </div>
         </Modal>
       </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { List, InputItem } from 'antd-mobile';
-import { createForm } from 'rc-form';
+// import { createForm } from 'rc-form';
 
 class BasicInput extends React.Component {
   // state = {
@@ -73,5 +73,5 @@ BasicInput.propTypes = {
   form: PropTypes.object,
 };
 
-const BasicInputWrapper = createForm()(BasicInput);
-export default BasicInputWrapper;
+// const BasicInputWrapper = createForm()(BasicInput);
+export default BasicInput;
