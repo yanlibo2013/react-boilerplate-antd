@@ -33,15 +33,15 @@ module.exports = options => ({
   optimization: options.optimization,
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react'],
-          plugins: ['babel-plugin-transform-class-properties'],
-        },
-      },
+      // {
+      //   test: /\.jsx?$/,
+      //   loader: 'babel-loader',
+      //   exclude: /node_modules/,
+      //   query: {
+      //     presets: ['es2015', 'react'],
+      //     plugins: ['babel-plugin-transform-class-properties'],
+      //   },
+      // },
       {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
         exclude: /node_modules/,
