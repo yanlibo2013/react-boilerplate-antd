@@ -12,6 +12,12 @@ import { compose } from 'redux';
 import './index.scss';
 export class HomePage extends React.PureComponent {
   componentDidMount() {}
+
+  clickItem(val) {
+    const { id } = val.id;
+    const path = `/repos/${id}`;
+    this.context.router.push(path);
+  }
   render() {
     const data = Array.from(new Array(9)).map((_val, i) => ({
       icon:
@@ -33,7 +39,9 @@ export class HomePage extends React.PureComponent {
             data={data}
             columnNum={3}
             itemStyle={{ height: '150px', background: 'rgba(0,0,0,.05)' }}
-            onClick={() => {}}
+            onClick={val => {
+              this.clickItem(val);
+            }}
           />
         </div>
       </div>
