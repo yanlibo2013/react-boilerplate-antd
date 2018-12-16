@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal } from 'antd-mobile';
+import Popup from 'components/Popup';
 import './index.scss';
 
 export class Footer extends React.PureComponent {
@@ -38,13 +39,8 @@ export class Footer extends React.PureComponent {
           animationType="slide-up"
           onClose={() => this.onClose(false)}
         >
-          <div style={{ height: 100, overflow: 'scroll' }}>
-            scoll content...<br />
-            scoll content...<br />
-            scoll content...<br />
-            scoll content...<br />
-            scoll content...<br />
-            scoll content...<br />
+          <div style={{ height: 400, overflow: 'scroll' }}>
+            <Popup />
           </div>
         </Modal>
       </div>
