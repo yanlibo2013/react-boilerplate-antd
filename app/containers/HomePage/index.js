@@ -7,6 +7,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import Header from 'components/Header';
+import Banner from 'components/Banner';
 import { compose } from 'redux';
 import './index.scss';
 export class HomePage extends React.PureComponent {
@@ -29,6 +30,7 @@ export class HomePage extends React.PureComponent {
         </Helmet>
         <div className="home">
           <Header />
+          <Banner />
         </div>
       </div>
     );
