@@ -1,21 +1,16 @@
 import React from 'react';
-import { NavBar, Icon } from 'antd-mobile';
+import { Icon } from 'antd-mobile';
 import './index.scss';
 
 /* eslint-disable react/prefer-stateless-function */
 class Component extends React.Component {
   render() {
     return (
-      <NavBar
-        mode="dark"
-        leftContent="Back"
-        rightContent={[
-          <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-          <Icon key="1" type="ellipsis" />,
-        ]}
-      >
-        NavBar
-      </NavBar>
+      <div className="head">
+        <Icon type="left" size="lg" className="left-icon" />
+        <span className="center">国民超级年金险</span>
+        <Icon type="ellipsis" size="lg" className="right-icon" />
+      </div>
     );
   }
 }

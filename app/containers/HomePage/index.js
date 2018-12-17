@@ -6,8 +6,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import { Grid } from 'antd-mobile';
-
+import Header from 'components/Header';
 import { compose } from 'redux';
 import './index.scss';
 export class HomePage extends React.PureComponent {
@@ -19,12 +18,6 @@ export class HomePage extends React.PureComponent {
     this.router.push(path);
   }
   render() {
-    const data = Array.from(new Array(9)).map((_val, i) => ({
-      icon:
-        'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-      text: `Grid${i}`,
-      id: i,
-    }));
     return (
       <div className="home">
         <Helmet>
@@ -34,15 +27,8 @@ export class HomePage extends React.PureComponent {
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
-        <div className="page">
-          <Grid
-            data={data}
-            columnNum={3}
-            itemStyle={{ height: '150px', background: 'rgba(0,0,0,.05)' }}
-            onClick={val => {
-              this.clickItem(val);
-            }}
-          />
+        <div className="home">
+          <Header />
         </div>
       </div>
     );
