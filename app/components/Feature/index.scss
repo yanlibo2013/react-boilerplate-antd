@@ -1,0 +1,24 @@
+.feature {
+ 
+  .title{
+    display: flex;
+    justify-content:space-between;
+    font-size: 40px;
+    color: #444444;
+    font-weight:Medium;
+    padding: 21px 24px 0 24px;
+
+    .right{
+      display: inline-block;
+     img{
+       height: 50px;
+     }
+    }
+  }
+
+  ul li{
+    font-size: 29px;
+    color: #666666
+  }
+
+}

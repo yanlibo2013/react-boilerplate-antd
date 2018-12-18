@@ -8,6 +8,10 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import Header from 'components/Header';
 import Banner from 'components/Banner';
+import Feature from 'components/Feature';
+import Range from 'components/Range';
+import Form from 'components/Form';
+import { WhiteSpace } from 'antd-mobile';
 import { compose } from 'redux';
 import './index.scss';
 export class HomePage extends React.PureComponent {
@@ -31,6 +35,10 @@ export class HomePage extends React.PureComponent {
         <div className="home">
           <Header />
           <Banner />
+          <Feature />
+          <Form />
+          <WhiteSpace size="xl" />
+          <Range />
         </div>
       </div>
     );
