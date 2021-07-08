@@ -1,5 +1,5 @@
 /*
- * HomePage
+ * LoginPage
  *
  */
 
@@ -11,7 +11,8 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import './index.scss';
 import { isShowScrollBar } from '../App/actions';
-export class HomePage extends React.PureComponent {
+
+export class Page extends React.PureComponent {
   getScrollHeight() {
     return Math.max(
       document.body.scrollHeight,
@@ -24,23 +25,30 @@ export class HomePage extends React.PureComponent {
   }
   render() {
     return (
-      <div className="home">
+      <div className="about">
         <Helmet>
-          <title>home Page</title>
+          <title>about Page</title>
           <meta
             name="description"
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
         <div className="page">
-          <span>科达</span>
+          <span>about</span>
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
+          <div className="box" />
         </div>
       </div>
     );
   }
 }
 
-HomePage.propTypes = {
+Page.propTypes = {
   isShowScrollBar: PropTypes.func,
 };
 
@@ -64,4 +72,4 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-export default compose(withConnect)(HomePage);
+export default compose(withConnect)(Page);

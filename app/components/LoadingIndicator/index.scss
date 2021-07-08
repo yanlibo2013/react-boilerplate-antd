@@ -1,0 +1,12 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: rgb(53, 126, 221);
+
+  .sk-fade-in > div {
+    height: 250px;
+    margin:7px;
+  }
+}

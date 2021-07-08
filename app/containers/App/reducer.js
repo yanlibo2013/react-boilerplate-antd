@@ -12,7 +12,12 @@
 
 import { fromJS } from 'immutable';
 
-import { LOAD_REPOS_SUCCESS, LOAD_REPOS, LOAD_REPOS_ERROR } from './constants';
+import {
+  LOAD_REPOS_SUCCESS,
+  LOAD_REPOS,
+  LOAD_REPOS_ERROR,
+  IS_SHOW_SCROLL,
+} from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
@@ -22,6 +27,7 @@ const initialState = fromJS({
   userData: {
     repositories: false,
   },
+  isShowScroll: false,
 });
 
 function appReducer(state = initialState, action) {
@@ -38,6 +44,8 @@ function appReducer(state = initialState, action) {
         .set('currentUser', action.username);
     case LOAD_REPOS_ERROR:
       return state.set('error', action.error).set('loading', false);
+    case IS_SHOW_SCROLL:
+      return state.set('isShowScroll', action.data);
     default:
       return state;
   }
